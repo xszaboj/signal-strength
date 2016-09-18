@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+<link rel="stylesheet" type="text/css" href="../src/styles.css">
+</head>
+<body>
+    <div id="signal"></div>
+    <div>
+        <button id="random">RANDOMIZE</button>
+    </div>
+</body>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="../src/signal.js"></script>
+<script>
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var signal = null;
+   $(function(){
+           signal = $("#signal").signal({
+               exponential: true
+       });
+       $("#random").click(function(){
+           var random = getRandomInt(0,100);
+           console.log(random);
+           signal.Update(random);
+       })
+   })
+</script>
+</html>

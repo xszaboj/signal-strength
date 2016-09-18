@@ -1,0 +1,7 @@
+.bar{
+  width: 30px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  display: inline-block;
+  border: 1px solid black;
+}
